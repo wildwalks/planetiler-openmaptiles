@@ -707,7 +707,7 @@ public class Tables {
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
     public static final Expression MAPPING = and(or(matchAny("aerialway", "station"),
-      matchAny("amenity", "arts_centre", "atm", "bank", "bar", "bbq", "bicycle_parking", "bicycle_rental", "biergarten",
+      matchAny("amenity", "arts_centre", "atm", "bank", "bar", "bbq", "bench", "bicycle_parking", "bicycle_rental", "biergarten",
         "bus_station", "cafe", "cinema", "clinic", "college", "community_centre", "courthouse", "dentist", "doctors",
         "drinking_water", "fast_food", "ferry_terminal", "fire_station", "food_court", "fuel", "grave_yard", "hospital",
         "ice_cream", "kindergarten", "library", "marketplace", "motorcycle_parking", "nightclub", "nursing_home",
@@ -777,7 +777,7 @@ public class Tables {
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
     public static final Expression MAPPING = and(or(matchAny("aerialway", "station"),
-      matchAny("amenity", "arts_centre", "atm", "bank", "bar", "bbq", "bicycle_parking", "bicycle_rental", "biergarten",
+      matchAny("amenity", "arts_centre", "atm", "bank", "bar", "bbq", "bench", "bicycle_parking", "bicycle_rental", "biergarten",
         "bus_station", "cafe", "cinema", "clinic", "college", "community_centre", "courthouse", "dentist", "doctors",
         "drinking_water", "fast_food", "ferry_terminal", "fire_station", "food_court", "fuel", "grave_yard", "hospital",
         "ice_cream", "kindergarten", "library", "marketplace", "motorcycle_parking", "nightclub", "nursing_home",
