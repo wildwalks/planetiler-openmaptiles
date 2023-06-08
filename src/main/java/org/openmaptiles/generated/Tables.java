@@ -721,7 +721,7 @@ public class Tables {
       matchAny("landuse", "basin", "brownfield", "cemetery", "reservoir", "winter_sports"),
       matchAny("leisure", "dog_park", "escape_game", "garden", "golf_course", "ice_rink", "hackerspace", "marina",
         "miniature_golf", "park", "pitch", "playground", "sports_centre", "stadium", "swimming_area", "swimming_pool",
-        "water_park"),
+        "water_park", "picnic_table"),
       matchAny("office", "diplomatic"),
       matchAny("railway", "halt", "station", "subway_entrance", "train_station_entrance", "tram_stop"),
       matchAny("shop", "accessories", "alcohol", "antiques", "art", "bag", "bakery", "beauty", "bed", "beverages",
@@ -747,7 +747,7 @@ public class Tables {
       matchAny("tourism", "alpine_hut", "aquarium", "artwork", "attraction", "bed_and_breakfast", "camp_site",
         "caravan_site", "chalet", "gallery", "guest_house", "hostel", "hotel", "information", "motel", "museum",
         "picnic_site", "theme_park", "viewpoint", "zoo"),
-      matchAny("waterway", "dock")), matchType("point"));
+      matchAny("waterway", "dock", "waterfall")), matchType("point"));
 
     /**
      * Interface for layer implementations to extend to subscribe to OSM elements filtered and parsed as
@@ -791,7 +791,7 @@ public class Tables {
       matchAny("landuse", "basin", "brownfield", "cemetery", "reservoir", "winter_sports"),
       matchAny("leisure", "dog_park", "escape_game", "garden", "golf_course", "ice_rink", "hackerspace", "marina",
         "miniature_golf", "park", "pitch", "playground", "sports_centre", "stadium", "swimming_area", "swimming_pool",
-        "water_park"),
+        "water_park", "picnic_table"),
       matchAny("office", "diplomatic"),
       matchAny("railway", "halt", "station", "subway_entrance", "train_station_entrance", "tram_stop"),
       matchAny("shop", "accessories", "alcohol", "antiques", "art", "bag", "bakery", "beauty", "bed", "beverages",
