@@ -203,7 +203,7 @@ public class Tables {
     }
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
-    public static final Expression MAPPING = and(matchAny("natural", "peak", "volcano", "saddle"), matchType("point"));
+    public static final Expression MAPPING = and(matchAny("natural", "peak", "volcano", "saddle", "bay" ,"tree", "beach", "blowhole", "cape", "hot_spring", "spring", "cave_entrance", "arch", "hill", "rock", "sinkhole", "stone"), matchType("point"));
 
     /**
      * Interface for layer implementations to extend to subscribe to OSM elements filtered and parsed as
@@ -744,7 +744,7 @@ public class Tables {
         "rugby_union", "running", "sailing", "scuba_diving", "shooting", "shooting_range", "skateboard", "skating",
         "skiing", "soccer", "surfing", "swimming", "table_soccer", "table_tennis", "team_handball", "tennis",
         "toboggan", "volleyball", "water_ski", "yoga"),
-      matchAny("tourism", "alpine_hut", "aquarium", "artwork", "attraction", "bed_and_breakfast", "camp_site",
+      matchAny("tourism", "alpine_hut", "wilderness_hut", "aquarium", "artwork", "attraction", "bed_and_breakfast", "camp_site",
         "caravan_site", "chalet", "gallery", "guest_house", "hostel", "hotel", "information", "motel", "museum",
         "picnic_site", "theme_park", "viewpoint", "zoo"),
       matchAny("waterway", "dock", "waterfall")), matchType("point"));
@@ -814,7 +814,7 @@ public class Tables {
         "rugby_union", "running", "sailing", "scuba_diving", "shooting", "shooting_range", "skateboard", "skating",
         "skiing", "soccer", "surfing", "swimming", "table_soccer", "table_tennis", "team_handball", "tennis",
         "toboggan", "volleyball", "water_ski", "yoga"),
-      matchAny("tourism", "alpine_hut", "aquarium", "artwork", "attraction", "bed_and_breakfast", "camp_site",
+      matchAny("tourism", "alpine_hut", "wilderness_hut", "aquarium", "artwork", "attraction", "bed_and_breakfast", "camp_site",
         "caravan_site", "chalet", "gallery", "guest_house", "hostel", "hotel", "information", "motel", "museum",
         "picnic_site", "theme_park", "viewpoint", "zoo"),
       matchAny("waterway", "dock")), matchType("polygon"));
