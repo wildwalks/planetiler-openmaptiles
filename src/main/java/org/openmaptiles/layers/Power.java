@@ -39,12 +39,13 @@ public class Power implements Layer, OpenMapTilesProfile.OsmAllProcessor {
 
   @Override
   public void processAllOsm(SourceFeature feature, FeatureCollector features) {
-    if (feature.canBeLine() && feature.hasTag("power", "cable", "line", "minor_line", "tower", "pole", "terminal")) {
+    if (feature.canBeLine() && feature.hasTag("power", "cable", "line", "minor_line")) {
       features.line(LAYER_NAME)
           .setBufferPixels(4)
           .setMinZoom(13)
           .setAttr("kind", feature.getString("power"))
-          .setAttr("voltage", feature.getString("voltage"));
+          .setAttr("voltage", feature.getString("voltage"))
+          .setAttr("cables", feature.getString("cables"));
     }
     if (feature.isPoint() && feature.hasTag("power", "tower", "pole", "terminal")) {
       features.line(LAYER_NAME)
