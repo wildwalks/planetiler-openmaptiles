@@ -23,13 +23,8 @@ import org.openmaptiles.generated.OpenMapTilesSchema;
 import org.openmaptiles.generated.Tables;
 import org.openmaptiles.util.OmtLanguageUtils;
 import org.openmaptiles.util.Utils;
-import com.onthegomap.planetiler.FeatureCollector;
-import com.onthegomap.planetiler.config.PlanetilerConfig;
-import com.onthegomap.planetiler.reader.SourceFeature;
-import com.onthegomap.planetiler.stats.Stats;
-import com.onthegomap.planetiler.util.Translations;
 import org.openmaptiles.Layer;
-import org.openmaptiles.OpenMapTilesProfile;
+
 
 public class Power implements Layer, OpenMapTilesProfile.OsmAllProcessor {
 
@@ -44,11 +39,12 @@ public class Power implements Layer, OpenMapTilesProfile.OsmAllProcessor {
 
   @Override
   public void processAllOsm(SourceFeature feature, FeatureCollector features) {
-    if (feature.canBeLine() && feature.hasTag("power", "line", "minor_line")) {
-      features.line("power")
+    if (feature.canBeLine() && feature.hasTag("power", "cable", "line", "minor_line", "tower", "pole", "terminal")) {
+      features.line(LAYER_NAME)
           .setBufferPixels(4)
-          .setMinZoom(6)
-          .setAttr("class", "line");
+          .setMinZoom(13)
+          .setAttr("kind", feature.getString("power"))
+          .setAttr("voltage", feature.getString("voltage"));
     }
   }
 }
