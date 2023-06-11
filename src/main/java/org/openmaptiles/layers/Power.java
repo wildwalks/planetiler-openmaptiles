@@ -46,5 +46,11 @@ public class Power implements Layer, OpenMapTilesProfile.OsmAllProcessor {
           .setAttr("kind", feature.getString("power"))
           .setAttr("voltage", feature.getString("voltage"));
     }
+    if (feature.isPoint() && feature.hasTag("power", "tower", "pole", "terminal")) {
+      features.line(LAYER_NAME)
+          .setBufferPixels(4)
+          .setMinZoom(13)
+          .setAttr("kind", feature.getString("power"));
+    }
   }
 }
