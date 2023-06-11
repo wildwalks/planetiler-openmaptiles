@@ -77,6 +77,7 @@ public class OpenMapTilesSchema {
       new org.openmaptiles.layers.Boundary(translations, config, stats),
       new org.openmaptiles.layers.Aeroway(translations, config, stats),
       new org.openmaptiles.layers.Transportation(translations, config, stats),
+      new org.openmaptiles.layers.Power(translations, config, stats),
       new org.openmaptiles.layers.Building(translations, config, stats),
       new org.openmaptiles.layers.WaterName(translations, config, stats),
       new org.openmaptiles.layers.TransportationName(translations, config, stats),
@@ -1163,6 +1164,45 @@ public class OpenMapTilesSchema {
           and(matchAny("highway", "construction"), matchAny("construction", "raceway")))));
     }
   }
+   /**
+   * OpenStreetMap <a href="https://wiki.openstreetmap.org/wiki/Power">Power</a> 
+   */
+  public interface Power extends Layer {
+    double BUFFER_SIZE = 4.0;
+    String LAYER_NAME = "power";
+
+    @Override
+    default String name() {
+      return LAYER_NAME;
+    }
+
+    /** Attribute names for map elements in the power layer. */
+    final class Fields {
+      /**
+       * The OSM <a href="http://wiki.openstreetmap.org/wiki/Key:name"><code>name</code></a> value of the power. The
+       * <code>name</code> field may be empty for NaturalEarth data or at lower zoom levels.
+       */
+      public static final String CLASS_POWER = "power";
+      public static final String CLASS_CABLES = "cables";
+      public static final String CLASS_VOLTAGE = "voltage";
+      //public static final String NAME = "name";
+      /** English name <code>name:en</code> if available, otherwise <code>name</code>. */
+      //public static final String NAME_EN = "name_en";
+      /** German name <code>name:de</code> if available, otherwise <code>name</code> or <code>name:en</code>. */
+      //public static final String NAME_DE = "name_de";
+
+    }
+    /** Attribute values for map elements in the power layer. */
+    final class FieldValues {
+
+    }
+    /** Complex mappings to generate attribute values from OSM element tags in the power layer. */
+    final class FieldMappings {
+
+    }
+  }
+
+
   /**
    * All <a href="http://wiki.openstreetmap.org/wiki/Buildings">OSM Buildings</a>. All building tags are imported
    * (<a href="http://wiki.openstreetmap.org/wiki/Key:building"><code>building= </code></a>). Only buildings with tag
