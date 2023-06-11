@@ -48,7 +48,7 @@ public class Power implements Layer, OpenMapTilesProfile.OsmAllProcessor {
           .setAttr("cables", feature.getString("cables"));
     }
     if (feature.isPoint() && feature.hasTag("power", "tower", "pole", "terminal")) {
-      features.line(LAYER_NAME)
+      features.point(LAYER_NAME)
           .setBufferPixels(4)
           .setMinZoom(13)
           .setAttr("kind", feature.getString("power"));
