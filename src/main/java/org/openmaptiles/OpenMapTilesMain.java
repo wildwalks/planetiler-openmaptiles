@@ -52,8 +52,8 @@ public class OpenMapTilesMain {
       // override with --mbtiles=... argument or MBTILES=... env var or mbtiles=... in a config file
       .setOutput("mbtiles", dataDir.resolve("output.mbtiles"))
       .addShapefileSource(OpenMapTilesProfile.CONTOUR_SOURCE,
-        sourcesDir.resolve("au_contours_AX_39_LINES.zip"),
-        "https://osmdata.openstreetmap.de/download/au_contours_AX_39_LINES.zip")
+        sourcesDir.resolve("contours.zip"),
+        "https://osmdata.openstreetmap.de/download/contours.zip")
       .run();
   }
 }
