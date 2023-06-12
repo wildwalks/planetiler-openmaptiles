@@ -78,6 +78,7 @@ public class OpenMapTilesSchema {
       new org.openmaptiles.layers.Aeroway(translations, config, stats),
       new org.openmaptiles.layers.Transportation(translations, config, stats),
       new org.openmaptiles.layers.Power(translations, config, stats),
+      new org.openmaptiles.layers.Contour(translations, config, stats),
       new org.openmaptiles.layers.Building(translations, config, stats),
       new org.openmaptiles.layers.WaterName(translations, config, stats),
       new org.openmaptiles.layers.TransportationName(translations, config, stats),
@@ -1197,6 +1198,41 @@ public class OpenMapTilesSchema {
 
     }
     /** Complex mappings to generate attribute values from OSM element tags in the power layer. */
+    final class FieldMappings {
+
+    }
+  }
+
+   /**
+   * Bushwalk <a href="https://bushwalk.com">Contours</a> 
+   */
+  public interface Contour extends Layer {
+    double BUFFER_SIZE = 4.0;
+    String LAYER_NAME = "contour";
+
+    @Override
+    default String name() {
+      return LAYER_NAME;
+    }
+
+    /** Attribute names for map elements in the contour layer. */
+    final class Fields {
+      /**
+       * The Bushwalk <a href="http://bushwalk.com"><code>bushwalk</code></a> value of the contour. 
+       */
+      public static final String CLASS_ELEVATION = "elevation";
+      //public static final String NAME = "name";
+      /** English name <code>name:en</code> if available, otherwise <code>name</code>. */
+      //public static final String NAME_EN = "name_en";
+      /** German name <code>name:de</code> if available, otherwise <code>name</code> or <code>name:en</code>. */
+      //public static final String NAME_DE = "name_de";
+
+    }
+    /** Attribute values for map elements in the contour layer. */
+    final class FieldValues {
+
+    }
+    /** Complex mappings to generate attribute values from OSM element tags in the contour layer. */
     final class FieldMappings {
 
     }
