@@ -32,6 +32,7 @@ import org.openmaptiles.layers.TransportationName;
  * <li>{@link LakeCenterlineProcessor}</li>
  * <li>{@link NaturalEarthProcessor}</li>
  * <li>{@link OsmWaterPolygonProcessor}</li>
+ * <li>{@link ContourLinesProcessor}</li>
  * <li>{@link OsmAllProcessor} to process every OSM feature</li>
  * <li>{@link OsmRelationPreprocessor} to process every OSM relation during first pass through OSM file</li>
  * <li>A {@link Tables.RowHandler} implementation in {@code Tables.java} to process input features filtered and parsed
@@ -48,6 +49,7 @@ public class OpenMapTilesProfile extends ForwardingProfile {
   // IDs used in stats and logs for each input source, as well as argument/config file overrides to source locations
   public static final String LAKE_CENTERLINE_SOURCE = "lake_centerlines";
   public static final String WATER_POLYGON_SOURCE = "water_polygons";
+  public static final String CONTOUR_SOURCE = "contours";
   public static final String NATURAL_EARTH_SOURCE = "natural_earth";
   public static final String OSM_SOURCE = "osm";
   /** Index to efficiently find the imposm3 "table row" constructor from an OSM element based on its tags. */
@@ -100,6 +102,9 @@ public class OpenMapTilesProfile extends ForwardingProfile {
       }
       if (handler instanceof OsmWaterPolygonProcessor processor) {
         registerSourceHandler(WATER_POLYGON_SOURCE, processor::processOsmWater);
+      }
+      if (handler instanceof ContourLinesProcessor processor) {
+        registerSourceHandler(CONTOUR_SOURCE, processor::processContourLines);
       }
       if (handler instanceof LakeCenterlineProcessor processor) {
         registerSourceHandler(LAKE_CENTERLINE_SOURCE, processor::processLakeCenterline);
@@ -246,6 +251,21 @@ public class OpenMapTilesProfile extends ForwardingProfile {
      * @see Profile#processFeature(SourceFeature, FeatureCollector)
      */
     void processOsmWater(SourceFeature feature, FeatureCollector features);
+  }
+
+    /**
+   * Layers should implement this interface to subscribe to elements from
+   * <a href="???">Bushwalk contour set</a>.
+   */
+  public interface ContourLinesProcessor {
+
+    /**
+     * Process an element from the <a href="https://osmdata.openstreetmap.de/data/water-polygons.html">Contour
+     *  source</a>
+     *
+     * @see Profile#processFeature(SourceFeature, FeatureCollector)
+     */
+    void processContourLines(SourceFeature feature, FeatureCollector features);
   }
 
   /** Layers should implement this interface to subscribe to every OSM element. */
