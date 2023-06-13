@@ -78,7 +78,7 @@ public class OpenMapTilesSchema {
       new org.openmaptiles.layers.Aeroway(translations, config, stats),
       new org.openmaptiles.layers.Transportation(translations, config, stats),
       new org.openmaptiles.layers.Power(translations, config, stats),
-      new org.openmaptiles.layers.Contour(translations, config, stats),
+   //   new org.openmaptiles.layers.Contour(translations, config, stats),
       new org.openmaptiles.layers.Building(translations, config, stats),
       new org.openmaptiles.layers.WaterName(translations, config, stats),
       new org.openmaptiles.layers.TransportationName(translations, config, stats),
