@@ -21,12 +21,13 @@ import java.util.Map;
 import org.openmaptiles.OpenMapTilesProfile;
 import org.openmaptiles.generated.OpenMapTilesSchema;
 import org.openmaptiles.generated.Tables;
+import org.openmaptiles.generated.OpenMapTilesSchema.AerodromeLabel.Fields;
 import org.openmaptiles.util.OmtLanguageUtils;
 import org.openmaptiles.util.Utils;
 import org.openmaptiles.Layer;
 
 
-public class Contour implements Layer, OpenMapTilesProfile.ContourLinesProcessor {
+public class Contour implements Layer, OpenMapTilesProfile.FeaturePostProcessor, OpenMapTilesProfile.ContourLinesProcessor {
 
   private static final String LAYER_NAME = "contour";
 
@@ -42,6 +43,6 @@ public class Contour implements Layer, OpenMapTilesProfile.ContourLinesProcessor
       features.line(LAYER_NAME)
           .setBufferPixels(4)
           .setMinZoom(14)
-          .setAttr("elevation", feature.getString("name"));
+          .setAttr(Fields.CLASS, feature.getString("name"));
   }
 }
