@@ -27,7 +27,7 @@ import org.openmaptiles.util.Utils;
 import org.openmaptiles.Layer;
 
 
-public class Contour implements Layer, OpenMapTilesProfile.FeaturePostProcessor, OpenMapTilesProfile.ContourLinesProcessor {
+public class Contour implements Layer, OpenMapTilesProfile.ContourLinesProcessor {
 
   private static final String LAYER_NAME = "contour";
 
@@ -43,6 +43,7 @@ public class Contour implements Layer, OpenMapTilesProfile.FeaturePostProcessor,
       features.line(LAYER_NAME)
           .setBufferPixels(4)
           .setMinZoom(14)
-          .setAttr(Fields.CLASS, feature.getString("name"));
+          .setAttr("name", feature.getString("name"))
+          .setAttr("ELEVATION", feature.getString("ELEVATION"));
   }
 }
