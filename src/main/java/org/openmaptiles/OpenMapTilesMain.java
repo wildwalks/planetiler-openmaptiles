@@ -51,8 +51,8 @@ public class OpenMapTilesMain {
         "planet".equalsIgnoreCase(area) ? ("aws:latest") : ("geofabrik:" + area))
       // override with --mbtiles=... argument or MBTILES=... env var or mbtiles=... in a config file
       .setOutput("mbtiles", dataDir.resolve("output.mbtiles"))
-      .addGeoPackageSource(OpenMapTilesProfile.CONTOUR_SOURCE,
-        sourcesDir.resolve("contours-au.gpkg"),
+      .addShapefileSource(OpenMapTilesProfile.CONTOUR_SOURCE,
+        sourcesDir.resolveSibling("contours"),
         "https://osmdata.openstreetmap.de/download/contours-au.gpkg")
       .run();
   }
