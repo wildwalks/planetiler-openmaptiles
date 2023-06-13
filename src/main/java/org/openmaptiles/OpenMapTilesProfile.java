@@ -49,7 +49,7 @@ public class OpenMapTilesProfile extends ForwardingProfile {
   // IDs used in stats and logs for each input source, as well as argument/config file overrides to source locations
   public static final String LAKE_CENTERLINE_SOURCE = "lake_centerlines";
   public static final String WATER_POLYGON_SOURCE = "water_polygons";
- // public static final String CONTOUR_SOURCE = "contours";
+  public static final String CONTOUR_SOURCE = "contours";
   public static final String NATURAL_EARTH_SOURCE = "natural_earth";
   public static final String OSM_SOURCE = "osm";
   /** Index to efficiently find the imposm3 "table row" constructor from an OSM element based on its tags. */
@@ -103,9 +103,9 @@ public class OpenMapTilesProfile extends ForwardingProfile {
       if (handler instanceof OsmWaterPolygonProcessor processor) {
         registerSourceHandler(WATER_POLYGON_SOURCE, processor::processOsmWater);
       }
-     // if (handler instanceof ContourLinesProcessor processor) {
-     //   registerSourceHandler(CONTOUR_SOURCE, processor::processContourLines);
-     // }
+      if (handler instanceof ContourLinesProcessor processor) {
+        registerSourceHandler(CONTOUR_SOURCE, processor::processContourLines);
+      }
       if (handler instanceof LakeCenterlineProcessor processor) {
         registerSourceHandler(LAKE_CENTERLINE_SOURCE, processor::processLakeCenterline);
       }
