@@ -247,9 +247,9 @@ public class TransportationName implements
     boolean isLink = Transportation.isLink(highway);
     String baseClass = highwayClass.replace("_construction", "");
 
-    int minzoom = FieldValues.CLASS_TRUNK.equals(baseClass) ? 8 :
-      FieldValues.CLASS_MOTORWAY.equals(baseClass) ? 6 :
-      isLink ? 13 : 12; // fallback - get from line minzoom, but floor at 12
+    int minzoom = FieldValues.CLASS_TRUNK.equals(baseClass) ? 6 :
+      FieldValues.CLASS_MOTORWAY.equals(baseClass) ? 5 :
+      isLink ? 12 : 10; // fallback - get from line minzoom, but floor at 12
 
     // inherit min zoom threshold from visible road, and ensure we never show a label on a road that's not visible yet.
     minzoom = Math.max(minzoom, transportation.getMinzoom(element, highwayClass));

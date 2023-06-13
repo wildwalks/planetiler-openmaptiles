@@ -176,8 +176,8 @@ public class Transportation implements
       entry(FieldValues.CLASS_BUSWAY, 11),
       entry(FieldValues.CLASS_BUS_GUIDEWAY, 11),
       entry(FieldValues.CLASS_SECONDARY, 9),
-      entry(FieldValues.CLASS_PRIMARY, 7),
-      entry(FieldValues.CLASS_TRUNK, 5),
+      entry(FieldValues.CLASS_PRIMARY, 6),
+      entry(FieldValues.CLASS_TRUNK, 4),
       entry(FieldValues.CLASS_MOTORWAY, 4)
     );
   }
