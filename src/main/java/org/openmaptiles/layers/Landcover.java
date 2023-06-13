@@ -128,13 +128,13 @@ public class Landcover implements
         .setAttr(Fields.CLASS, clazz)
         .setAttr(Fields.SUBCLASS, subclass)
         .setNumPointsAttr(TEMP_NUM_POINTS_ATTR)
-        .setMinZoom(7);
+        .setMinZoom(4);
     }
   }
 
   @Override
   public List<VectorTile.Feature> postProcess(int zoom, List<VectorTile.Feature> items) throws GeometryException {
-    if (zoom < 7 || zoom > 13) {
+    if (zoom < 4 || zoom > 13) {
       for (var item : items) {
         item.attrs().remove(TEMP_NUM_POINTS_ATTR);
       }
