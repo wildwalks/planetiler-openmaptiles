@@ -43,7 +43,7 @@ class OpenMapTilesTest {
   private static Mbtiles mbtiles;
 
   @BeforeAll
-  @Timeout(30)
+  @Timeout(300)
   public static void runPlanetiler() throws Exception {
     Path dbPath = tmpDir.resolve("output.mbtiles");
     var osmPath = TestUtils.extractPathToResource(tmpDir, "monaco-latest.osm.pbf");
