@@ -101,6 +101,7 @@ public class Landuse implements
       nullIfEmpty(element.landuse()),
       nullIfEmpty(element.amenity()),
       nullIfEmpty(element.leisure()),
+      nullIfEmpty(element.hazard()),
       nullIfEmpty(element.tourism()),
       nullIfEmpty(element.place()),
       nullIfEmpty(element.waterway())
@@ -122,6 +123,7 @@ public class Landuse implements
       }
     }
   }
+
 
   @Override
   public List<VectorTile.Feature> postProcess(int zoom,
