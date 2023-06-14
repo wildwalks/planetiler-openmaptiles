@@ -77,7 +77,7 @@ public class OpenMapTilesSchema {
       new org.openmaptiles.layers.Boundary(translations, config, stats),
       new org.openmaptiles.layers.Aeroway(translations, config, stats),
       new org.openmaptiles.layers.Transportation(translations, config, stats),
-      new org.openmaptiles.layers.Power(translations, config, stats),
+      new org.openmaptiles.layers.Utility(translations, config, stats),
       new org.openmaptiles.layers.Contour(translations, config, stats),
       new org.openmaptiles.layers.Building(translations, config, stats),
       new org.openmaptiles.layers.WaterName(translations, config, stats),
@@ -1170,22 +1170,22 @@ public class OpenMapTilesSchema {
    /**
    * OpenStreetMap <a href="https://wiki.openstreetmap.org/wiki/Power">Power</a> 
    */
-  public interface Power extends Layer {
+  public interface Utility extends Layer {
     double BUFFER_SIZE = 4.0;
-    String LAYER_NAME = "power";
+    String LAYER_NAME = "utility";
 
     @Override
     default String name() {
       return LAYER_NAME;
     }
 
-    /** Attribute names for map elements in the power layer. */
+    /** Attribute names for map elements in the power and other unities layer. */
     final class Fields {
       /**
        * The OSM <a href="http://wiki.openstreetmap.org/wiki/Key:name"><code>name</code></a> value of the power. The
        * <code>name</code> field may be empty for NaturalEarth data or at lower zoom levels.
        */
-      public static final String CLASS_POWER = "power";
+      public static final String CLASS_Utility = "power";
       public static final String CLASS_CABLES = "cables";
       public static final String CLASS_VOLTAGE = "voltage";
       //public static final String NAME = "name";

@@ -26,11 +26,11 @@ import org.openmaptiles.util.Utils;
 import org.openmaptiles.Layer;
 
 
-public class Power implements Layer, OpenMapTilesProfile.OsmAllProcessor {
+public class Utility implements Layer, OpenMapTilesProfile.OsmAllProcessor {
 
-  private static final String LAYER_NAME = "power";
+  private static final String LAYER_NAME = "utility";
 
-  public Power(Translations translations, PlanetilerConfig config, Stats stats) {}
+  public Utility(Translations translations, PlanetilerConfig config, Stats stats) {}
 
   @Override
   public String name() {

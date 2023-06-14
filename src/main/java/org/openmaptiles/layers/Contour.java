@@ -44,6 +44,6 @@ public class Contour implements Layer, OpenMapTilesProfile.ContourLinesProcessor
           .setBufferPixels(4)
           .setMinZoom(14)
           .setAttr("name", feature.getString("name"))
-          .setAttr("ELEVATION", feature.getString("ELEVATION"));
+          .setAttr("elevation", feature.getString("ELEVATION"));
   }
 }
