@@ -114,7 +114,7 @@ public class MountainPeak implements
   @Override
   public void process(Tables.OsmPeakPoint element, FeatureCollector features) {
     Double meters = Parse.meters(element.ele());
-    if (meters != null && Math.abs(meters) < 10_000) {
+    //if (meters != null && Math.abs(meters) < 10_000) { show peaks even if no elevation given
       var feature = features.point(LAYER_NAME)
         .setAttr(Fields.CLASS, element.source().getTag("natural"))
         .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
@@ -134,7 +134,7 @@ public class MountainPeak implements
       if (peakInAreaUsingFeet(element)) {
         feature.setAttr(Fields.CUSTOMARY_FT, 1);
       }
-    }
+    //}
   }
 
   @Override
