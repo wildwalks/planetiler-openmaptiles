@@ -42,7 +42,7 @@ public class Contour implements Layer, OpenMapTilesProfile.ContourLinesProcessor
   public void processContourLines(SourceFeature feature, FeatureCollector features) {
       features.line(LAYER_NAME)
           .setBufferPixels(4)
-          .setMinZoom(14)
+          .setMinZoom(13)
           .setAttr("name", feature.getString("name"))
           .setAttr("elevation", feature.getString("ELEVATION"));
   }

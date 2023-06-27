@@ -60,6 +60,6 @@ public class Housenumber implements
     features.centroidIfConvex(LAYER_NAME)
       .setBufferPixels(BUFFER_SIZE)
       .setAttr(Fields.HOUSENUMBER, element.housenumber())
-      .setMinZoom(14);
+      .setMinZoom(13);
   }
 }
